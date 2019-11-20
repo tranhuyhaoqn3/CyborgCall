@@ -1,0 +1,24 @@
+<h2>Sign In</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+      <form  #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+          <div class="form-group">
+              <label  class="control-label">UserName</label>
+              <input  class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="user.UserName" ngModel required />
+              <span  class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label  class="control-label">PassWord</label>
+              <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="user.PassWord" required />
+              <span  class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+          </div>
+          <div class="form-group">
+            <p>Don't have an account?<a routerLink="/user/registration"><u>Create one now</u></a> </p>
+        </div>
+          </form>
+    </div>
+</div>

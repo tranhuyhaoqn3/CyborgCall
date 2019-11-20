@@ -1,0 +1,78 @@
+
+<h2>Create Template</h2>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="form-group mb-3">
+                                <label  class="control-label">Name</label>
+                                <input  class="form-control" />
+                                <span  class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label  class="control-label">Description</label>
+                                <input class="form-control" />
+                                <span  class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3" >
+                                    <label  class="control-label">Phone Customers</label>
+                                    <input type="text" value="" data-role="tagsinput" id="tags" class="form-control">
+                                    <span  class="text-danger"></span>
+                                </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="form-group mb-3">
+                                <label for="example-select">Number of sentence</label>
+                                <select class="form-control" (change)="onChange($event.target.value)" id="example-select">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div *ngFor="let item of arrSentence" class="form-group mb-3">
+                                    <label class="control-label">{{'Sentence '+ item}}</label>
+                                    <div>
+                                            <table style="width:100%; margin-bottom:10px;">
+                                                <tr>
+                                                    <td>
+                                                        <textarea  class="form-control" rows="2" cols="50" placeholder=""></textarea>
+                                                        <div class="progress" style="display:none; margin-top:10px;">
+                                                            <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:10%;"><input type="button" class="btn btn-info btn-play"  value="🔊 Convert to Speech" /></td>
+                                                </tr>
+                                            </table>
+                                            <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group prompt-audio">
+                                                            <audio autoplay style="width:100%" controls>
+                                                                <source>
+                                                            </audio>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </form>
+                    </div> 
+                </div>
+            </div> 
+            <div class="form-group text-center">
+                    <button  class="btn btn-primary">Create</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a routerLink="/template">Back to List</a>
+</div>
